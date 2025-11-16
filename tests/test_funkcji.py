@@ -17,3 +17,11 @@ def test_fibonacci():
     assert fibonacci(5) == 5
     assert fibonacci(10) == 55
     with pytest.raises(ValueError): fibonacci(-1)
+
+# 3. Testy dla funkcji count_vowels
+def test_count_vowels():
+    assert count_vowels("Python") == 2
+    assert count_vowels("AEIOUY") == 6
+    assert count_vowels("bcd") == 0
+    assert count_vowels("") == 0
+    assert count_vowels("Próba żółwia") == 5
