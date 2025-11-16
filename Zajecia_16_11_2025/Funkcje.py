@@ -5,6 +5,8 @@ def is_palindrome(text: str) -> bool:
 
 #FIBONACCI
 def fibonacci(n: int) -> int:
+    if n < 0:
+        raise ValueError("Liczba musi być większa lub równa 0")
     if n == 0:
         return 0
     elif n == 1:
