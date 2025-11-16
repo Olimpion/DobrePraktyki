@@ -42,10 +42,20 @@ def test_flatten_list():
     assert flatten_list([[[1]]]) == [1]
     assert flatten_list([1, [2, [3, [4]]]]) == [1, 2, 3, 4]
 
-#Test dla funkcji word_frequencies
+# 6.Test dla funkcji word_frequencies
 def test_word_frequencies():
     assert word_frequencies("To be or not to be") == {"to": 2, "be": 2, "or": 1, "not": 1}
     assert word_frequencies("Hello, hello!") == {"hello": 2}
     assert word_frequencies("") == {}
     assert word_frequencies("Python Python python") == {"python": 3}
     assert word_frequencies("Ala ma kota, a kot ma Ale.") == {"a": 1, "ala": 1, "ma": 2, "kota": 1, "kot": 1, "ale": 1}
+
+# 7. Test dla funkcji is_Prime
+def test_is_prime():
+    assert is_prime(2) == True
+    assert is_prime(3) == True
+    assert is_prime(4) == False
+    assert is_prime(0) == False
+    assert is_prime(1) == False
+    assert is_prime(5) == True
+    assert is_prime(97) == True
