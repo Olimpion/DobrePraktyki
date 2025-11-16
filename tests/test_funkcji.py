@@ -25,3 +25,11 @@ def test_count_vowels():
     assert count_vowels("bcd") == 0
     assert count_vowels("") == 0
     assert count_vowels("Próba żółwia") == 5
+
+# 3. Testy dla funkcji calculate_discount
+def test_calculate_discount():
+    assert calculate_discount(100, 0.2) == 80.0
+    assert calculate_discount(50, 0) == 50.0
+    assert calculate_discount(200, 1) == 0.0
+    with pytest.raises(ValueError): calculate_discount(100, -0.1)
+    with pytest.raises(ValueError): calculate_discount(100, 1.5)
