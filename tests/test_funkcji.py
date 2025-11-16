@@ -26,10 +26,18 @@ def test_count_vowels():
     assert count_vowels("") == 0
     assert count_vowels("Próba żółwia") == 5
 
-# 3. Testy dla funkcji calculate_discount
+# 4. Testy dla funkcji calculate_discount
 def test_calculate_discount():
     assert calculate_discount(100, 0.2) == 80.0
     assert calculate_discount(50, 0) == 50.0
     assert calculate_discount(200, 1) == 0.0
     with pytest.raises(ValueError): calculate_discount(100, -0.1)
     with pytest.raises(ValueError): calculate_discount(100, 1.5)
+
+# 5. Test dla funkcji flatten list
+def test_flatten_list():
+    assert flatten_list([1, 2, 3]) == [1, 2, 3]
+    assert flatten_list([1, [2, 3], [4, [5]]]) == [1, 2, 3, 4, 5]
+    assert flatten_list([]) == []
+    assert flatten_list([[[1]]]) == [1]
+    assert flatten_list([1, [2, [3, [4]]]]) == [1, 2, 3, 4]
