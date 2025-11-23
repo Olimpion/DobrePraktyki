@@ -218,12 +218,6 @@ def get_db():
     finally:
         db.close()
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World", "Info": "Data is now served from SQLite database"}
-
-
 # Dodano parametry 'skip' i 'limit' dla paginacji,
 # ponieważ baza danych może zawierać tysiące rekordów.
 
