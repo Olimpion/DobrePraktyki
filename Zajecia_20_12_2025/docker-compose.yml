@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "8080:15672" # Panel
+      - "5672:5672"  # Komunikacja
+
+  api:
+    build: .
+    command: uvicorn producer:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbitmq
+
+  worker:
+    build: .
+    command: python consumer.py
+    depends_on:
+      - rabbitmq
