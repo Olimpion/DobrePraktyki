@@ -82,12 +82,8 @@ def get_plate_data(image_path_or_buf):
             else:
                 final_roi = thresh
 
-            custom_config = r'--oem 3 --psm 7 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-            raw_text = pytesseract.image_to_string(final_roi, config=custom_config).strip()
-
-            if not raw_text or len(raw_text) < 4:
-                custom_config_8 = r'--oem 3 --psm 8 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-                raw_text = pytesseract.image_to_string(final_roi, config=custom_config_8).strip()
+            custom_config_8 = r'--oem 3 --psm 8 -c tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+            raw_text = pytesseract.image_to_string(final_roi, config=custom_config_8).strip()
 
             return {
                 "box": xyxy,
